@@ -33,4 +33,18 @@ describe("Basics", () => {
     expect(sandbox.$el.hasClass("marker-context")).toBeFalsy();
     expect($.data(sandbox.el).textMarker).not.toBeDefined();
   });
+
+  it('set/get highligh color', ()=>{
+    var wrapper
+    
+    expect(marker.options.color).toEqual('#ffff7b');
+
+    marker.setColor('green')
+    expect(marker.options.color).toEqual('green');
+
+    wrapper = TextMarker.createWrapper(marker.options)
+    expect(wrapper.style.backgroundColor).toEqual('green')
+
+    expect(marker.getColor()).toEqual('green')
+  })
 });
