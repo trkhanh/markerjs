@@ -14,18 +14,23 @@ describe("Basics", () => {
   });
 
   it("Initialization", () => {
-    expect(Marker).toBeDefined();
-    expect(Marker.createWrapper).toBeDefined();
-    expect($.fn.Marker).toBeDefined();
-    expect($.data(sandbox.el).Marker).toBeDefined();
+    const options ={
+      color:'red',
+      highlightedClass:'marker-context'
+    }
 
-    expect(sandbox.$el.hasClass("Marker-context")).toBeTruthy();
+    expect(TextMarker).toBeDefined();
+    expect(TextMarker.createWrapper).toBeDefined();
+    expect($.fn.textMarker).toBeDefined();
+    expect($.data(sandbox.el).textMarker).toBeDefined();
+
+    expect(sandbox.$el.hasClass("marker-context")).toBeTruthy();
   });
 
   it("destroying", function () {
     marker.destroy();
 
-    expect(sandbox.$el.hasClass("Marker-context")).toBeFalsy();
+    expect(sandbox.$el.hasClass("marker-context")).toBeFalsy();
     expect($.data(sandbox.el).textMarker).not.toBeDefined();
   });
 });
