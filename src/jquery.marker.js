@@ -19,7 +19,7 @@
 
   /**
    * Returns TextMarker instance which is bound to given jQuery element.
-   * @returns {Marker}
+   * @returns {TextMarker}
    * @example $('#sandbox').getTextMarker() // returns TextMarker instance
    * @function external:"jQuery.fn".getMarker
    */
