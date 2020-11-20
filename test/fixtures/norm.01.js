@@ -1,10 +1,10 @@
 fixtures.register("01", function () {
   HIGHLIGHT(
     { color: "red" },
-    "Lorem ispum dolor ",
-    HIGHLIGHT({ color: "red", marker: true }, "sit amet")
-  ),
-    " consectetur adipiscing elit.";
+    "Lorem ipsum dolor ",
+    HIGHLIGHT({ color: "red", marked: true }, "sit amet"),
+    " consectetur adipiscing elit."
+  );
 });
 
 fixtures.register("01.flat", function () {
