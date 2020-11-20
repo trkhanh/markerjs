@@ -308,6 +308,17 @@
     el.removeEventListener("touchend", scope.markerHandler.bind(scope));
   }
 
+      /**
+     * Sorts array of DOM elements by its depth in DOM tree.
+     * @param {HTMLElement[]} arr - array to sort.
+     * @param {boolean} descending - order of sort.
+     */
+    function sortByDepth(arr, descending) {
+      arr.sort(function (a, b) {
+          return dom(descending ? b : a).parents().length - dom(descending ? a : b).parents().length;
+      });
+  }
+
   /**
    * Takes range object as parameter and refines it boundaries
    * @param range
