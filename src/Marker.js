@@ -136,7 +136,7 @@
        * @param {Node} refEl - node before which base element will be inserted
        * @returns {Node} - inserted element
        */
-      insertBefore: function (reEf) {
+      insertBefore: function (refEl) {
         return refEl.parentNode.insertBefore(el, refEl);
       },
 
@@ -209,7 +209,7 @@
        * element node has only one text node.
        * It should does the same as standard element.normalize, but IE implements it incorrectly.
        */
-      normalizeTextNode: function () {
+      normalizeTextNodes: function () {
         if (!el) {
           return;
         }
@@ -223,7 +223,7 @@
             el.parentNode.removeChild(el.nextSibling);
           }
         } else {
-          dom(el.firstChild).normalizeTextNode();
+          dom(el.firstChild).normalizeTextNodes();
         }
 
         dom(el.nextSibling).normalizeTextNodes();
@@ -308,15 +308,28 @@
     el.removeEventListener("touchend", scope.markerHandler.bind(scope));
   }
 
-      /**
-     * Sorts array of DOM elements by its depth in DOM tree.
-     * @param {HTMLElement[]} arr - array to sort.
-     * @param {boolean} descending - order of sort.
-     */
-    function sortByDepth(arr, descending) {
-      arr.sort(function (a, b) {
-          return dom(descending ? b : a).parents().length - dom(descending ? a : b).parents().length;
-      });
+  /**
+   * Returns array without duplicated values.
+   * @param {Array} arr
+   * @returns {Array}
+   */
+  function unique(arr) {
+    return arr.filter(function (value, idx, self) {
+      return self.indexOf(value) === idx;
+    });
+  }
+  /**
+   * Sorts array of DOM elements by its depth in DOM tree.
+   * @param {HTMLElement[]} arr - array to sort.
+   * @param {boolean} descending - order of sort.
+   */
+  function sortByDepth(arr, descending) {
+    arr.sort(function (a, b) {
+      return (
+        dom(descending ? b : a).parents().length -
+        dom(descending ? a : b).parents().length
+      );
+    });
   }
 
   /**
