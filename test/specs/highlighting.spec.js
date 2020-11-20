@@ -40,16 +40,13 @@ describe("Highlighting Range", () => {
 
       range = params.rangeCreator.apply(this, nodes);
 
-      marker.highlightRange(range, Marker.createWrapper(marker.options));
+      marker.highlightRange(range, TextMarker.createWrapper(marker.options));
 
       expect(
-        marker
-          .getHighlights({ container: sandbox.el })
-          .map(function (h) {
-            return h.textContent;
-          })
-          .toEqual(params.expectedHighlights)
-      );
+        marker.getHighlights({ container: sandbox.el }).map(function (h) {
+          return h.textContent;
+        })
+      ).toEqual(params.expectedHighlights);
     });
   }
 
@@ -58,7 +55,7 @@ describe("Highlighting Range", () => {
     title: "use case #01",
     expectedHighlights: ["ipsum"],
     rangeCreator: function (node) {
-      return sandbox.addRange(node.childNodes[0], node.childNodes[6], 6, 11);
+      return sandbox.addRange(node.childNodes[0], node.childNodes[0], 6, 11);
     },
   });
 });

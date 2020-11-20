@@ -34,7 +34,7 @@ describe("Basics", () => {
     expect($.data(sandbox.el).textMarker).not.toBeDefined();
   });
 
-  it('set/get highligh color', ()=>{
+  it('set/get highlight color', ()=>{
     var wrapper
     
     expect(marker.options.color).toEqual('#ffff7b');
