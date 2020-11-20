@@ -5,7 +5,7 @@
  * @global
  */
 
-var testSuite = function () {
+var testSuite = (function () {
   "use strict";
 
   /**
@@ -46,20 +46,20 @@ var testSuite = function () {
   }
 
   return {
-
     /**
      * Initializes sandbox and starts Jasmine test.
      * @param params
      * @param {boolean} params.Iframe - if set to true, sand box will be placed in to the iframe
      */
     initialize: function (params) {
-        window.onload = function () {
-            initSandbox(params);
+      window.onload = function () {
+        initSandbox(params);
 
-            // Wait for the iframe...
-            window.setTimeout(function () {
-                window.runJasmine(); // defined in jasmine/boot.js
-            }, 50);
-        };
-    }
-};
+        // Wait for the iframe...
+        window.setTimeout(function () {
+          window.runJasmine(); // defined in jasmine/boot.js
+        }, 50);
+      };
+    },
+  };
+})();
