@@ -16,27 +16,26 @@ describe("Flatting DOM tree", () => {
   });
 
   /**
-   * Tests normalization of highlights.
+   * Tests merging of the DOM tree after creating highlights.
    * Procedure:
    * [1] Load fixture.
-   * [2] Normalize highlights.
-   * [3] Check highlights returned by normalization method.
+   * [2] Flatten high light
+   * [3] Check number of text nodes.
    * @param params
    * @param {string} params.title - test title
    * @param {string} params.fixture - name of the fixture to load
-   * @param {string[]} params.highlights - expected text content of highlights returned by normalization
+   * @param {number} params.expectedTextNodesCount - expected number of text nodes after flattening
    */
-  function testNormalization(params) {
+  function testMerging(params) {
     it(params.title, function () {
-      var normalized = marker.normalizeHighlights(
-        sandbox.setFixture(params.fixture)
-      );
+      marker.mergeSiblingHighlights(sandbox.setFixture(params.fixture + ".flat"));
 
-      expect(
-        normalized.map(function (h) {
-          return h.textContent;
-        })
-      ).toEqual(params.highlights);
+      expect(sandbox.html()).toEqual(
+        fixtures.getAsHtml(params.fixture + ".merge", true)
+      );
+      expect(sandbox.getTextNodes().length).toEqual(
+        params.expectedTextNodesCount
+      );
     });
   }
 

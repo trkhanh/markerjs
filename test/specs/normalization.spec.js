@@ -34,7 +34,7 @@ describe("Normalization", () => {
 
       expect(
         normalized.map(function (h) {
-          return h.textContext;
+          return h.textContent;
         })
       ).toEqual(params.highlights);
     });
