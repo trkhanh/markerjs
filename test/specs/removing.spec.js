@@ -49,7 +49,6 @@ describe("Removing highlights", () => {
       );
     });
   }
-
   testRemoving({
     title: "use case #01",
     fixture: "01.preremove",
