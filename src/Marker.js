@@ -60,7 +60,9 @@
    * @param {Node} b
    * @returns {boolean}
    */
-  function haveSameColor(a, b) {}
+  function haveSameColor(a, b) {
+    return dom(a).color() === dom(b).color();
+  }
 
   /**
    * Utility functions to make DOM manipulation easier.
@@ -549,24 +551,24 @@
           parentNext = parent.nextSibling;
 
         if (self.isHighlight(parent)) {
-          if (!haveSameColor(parent, hl)) {
-            if (!hl.nextSibling) {
-              dom(hl).insertBefore(parentNext || parent);
-              again = true;
-            }
+          if (haveSameColor(parent, hl)) {
+            // if (!hl.nextSibling) {
+            //   dom(hl).insertBefore(parentNext || parent);
+            //   again = true;
+            // }
 
-            if (!hl.previousSibling) {
-              dom(hl).insertAfter(parentPrev || parent);
-              again = true;
-            }
+            // if (!hl.previousSibling) {
+            //   dom(hl).insertAfter(parentPrev || parent);
+            //   again = true;
+            // }
 
             if (!parent.hasChildNodes()) {
               dom(parent).remove();
+            } else {
+              parent.replaceChild(hl.firstChild, hl);
+              highlights[i] = parent;
+              again = true;
             }
-          } else {
-            parent.replaceChild(hl.firstChild, hl);
-            highlights[i] = parent;
-            again = true;
           }
         }
       });
