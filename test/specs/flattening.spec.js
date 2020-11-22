@@ -78,7 +78,7 @@ describe("Flatting DOM tree", () => {
   testFlattening({
     title: "use case #05",
     fixture: "05",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 3,
   });
 
   testFlattening({

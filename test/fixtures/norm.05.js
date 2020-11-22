@@ -1,5 +1,5 @@
 
-fixtures.register('07', function () {
+fixtures.register('05', function () {
   DIV(
       HIGHLIGHT({ color: 'red', marked: true }, 'Lorem ipsum '),
       HIGHLIGHT({ color: 'green' },
@@ -9,7 +9,7 @@ fixtures.register('07', function () {
   )
 });
 
-fixtures.register('07.flat', function () {
+fixtures.register('05.flat', function () {
   DIV(
       HIGHLIGHT({ color: 'red', marked: true }, 'Lorem ipsum '),
       HIGHLIGHT({ color: 'red', marked: true }, 'dolor'),
