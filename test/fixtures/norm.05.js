@@ -2,7 +2,7 @@
 fixtures.register('05', function () {
   DIV(
       HIGHLIGHT({ color: 'red', marked: true }, 'Lorem ipsum '),
-      HIGHLIGHT({ color: 'green' },
+      HIGHLIGHT({ color: 'red' },
           HIGHLIGHT({ color: 'red', marked: true }, 'dolor')
       ),
       HIGHLIGHT({ color: 'red', marked: true }, ' sit amet')

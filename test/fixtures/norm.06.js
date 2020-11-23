@@ -13,7 +13,7 @@ fixtures.register("06", function () {
   );
 });
 
-fixtures.register("04.flat", function () {
+fixtures.register("06.flat", function () {
   DIV(
     "Lorem ipsum",
     HIGHLIGHT({ color: "green", marked: true }, "dolor sit "),
@@ -22,7 +22,7 @@ fixtures.register("04.flat", function () {
   );
 });
 
-fixtures.register("04.merge", function () {
+fixtures.register("06.merge", function () {
   HIGHLIGHT(
     { color: "red" },
     "Lorem ipsum dolor sit amet consectetur adipiscing elit."

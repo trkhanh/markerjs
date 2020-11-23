@@ -76,6 +76,12 @@ describe("Flatting DOM tree", () => {
   });
 
   testFlattening({
+    title: "use case #04",
+    fixture: "04",
+    expectedTextNodesCount: 2,
+  });
+
+  testFlattening({
     title: "use case #05",
     fixture: "05",
     expectedTextNodesCount: 3,
@@ -84,36 +90,30 @@ describe("Flatting DOM tree", () => {
   testFlattening({
     title: "use case #06",
     fixture: "06",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 4,
   });
 
   testFlattening({
     title: "use case #07",
     fixture: "07",
-    expectedTextNodesCount: 2,
-  });
-
-  testFlattening({
-    title: "use case #04",
-    fixture: "04",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 3,
   });
 
   testFlattening({
     title: "use case #08",
     fixture: "08",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 5,
   });
 
   testFlattening({
     title: "use case #09",
     fixture: "09",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 5,
   });
 
   testFlattening({
     title: "use case #10",
     fixture: "10",
-    expectedTextNodesCount: 2,
+    expectedTextNodesCount: 5,
   });
 });
