@@ -24,8 +24,8 @@ And use it!
 var hltr = new TextMarker(document.body);
 ```
 
-For more details see [API reference](http://mir3z.github.io/textMarker/doc/index.html) or 
-[Wiki](https://github.com/mir3z/textMarker/wiki) pages on GitHub.
+For more details see [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or 
+[Wiki](https://github.com/trkhanh/textMarker/wiki) pages on GitHub.
 
 Also check Demos section below for examples of usage.
 
@@ -46,12 +46,12 @@ Should work in all decent browsers and IE >= 9.
 
 ## Demos
 
-* [Simple demo](http://mir3z.github.io/textMarker/demos/simple.html)
-* [Callbacks](http://mir3z.github.io/textMarker/demos/callbacks.html)
-* [Serialization](http://mir3z.github.io/textMarker/demos/serialization.html)
-* [Iframe](http://mir3z.github.io/textMarker/demos/iframe.html)
+* [Simple demo](http://trkhanh.github.io/textMarker/demos/simple.html)
+* [Callbacks](http://trkhanh.github.io/textMarker/demos/callbacks.html)
+* [Serialization](http://trkhanh.github.io/textMarker/demos/serialization.html)
+* [Iframe](http://trkhanh.github.io/textMarker/demos/iframe.html)
 
 ## Documentation
    
-You may check [API reference](http://mir3z.github.io/textMarker/doc/index.html) or 
-[Wiki](https://github.com/mir3z/textMarker/wiki) pages on GitHub.
+You may check [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or 
+[Wiki](https://github.com/trkhanh/textMarker/wiki) pages on GitHub.
