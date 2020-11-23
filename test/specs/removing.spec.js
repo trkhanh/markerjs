@@ -71,6 +71,7 @@ describe("Removing highlights", () => {
     expectedTextNodesCount: 1,
     expectedHTMLFixture: "02.postremove.all",
   });
+  
   testRemoving({
     title: "use case #03",
     fixture: "02.preremove",

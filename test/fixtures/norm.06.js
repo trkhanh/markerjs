@@ -23,8 +23,9 @@ fixtures.register("06.flat", function () {
 });
 
 fixtures.register("06.merge", function () {
-  HIGHLIGHT(
-    { color: "red" },
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+  DIV(
+    "Lorem ipsum ",
+    HIGHLIGHT({ color: "green" }, "dolor sit amet"),
+    HIGHLIGHT({ color: "red" }, " consectetur adipiscing elit.")
   );
 });
