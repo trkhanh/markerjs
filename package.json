@@ -5,15 +5,11 @@
   "scripts": {
     "start": "node ./index.js",
     "test": "jasmine",
-    "typeit" : "npx typescript src/Marker.js --declaration --allowJs --emitDeclarationOnly --outDir types"
+    "ts": "npx typescript src/Marker.js --declaration --allowJs --emitDeclarationOnly --outDir types",
+    "build": "parcel build ./src/Marker.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-closurecompiler": "^0.9.9",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsdoc": "^0.5.7",
     "jasmine": "^3.6.3",
     "live-server": "^1.2.1",
     "typescript": "^4.0.5"
