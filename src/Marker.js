@@ -433,12 +433,12 @@
   };
 
   TextMarker.prototype.toggle = function () {
-    if (dom(this.el).hasClass(IN_ACTIVE)) {
-      dom(this.el).removeClass(IN_ACTIVE);
+    if (!dom(this.el).hasClass(ACTIVE)) {
       dom(this.el).addClass(ACTIVE);
+      dom(this.el).removeClass(IN_ACTIVE);
     } else {
       dom(this.el).removeClass(ACTIVE);
-      dom(this.el).removeClass(IN_ACTIVE);
+      dom(this.el).addClass(IN_ACTIVE);
     }
   };
 
