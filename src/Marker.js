@@ -34,7 +34,13 @@
       "PARAM",
       "METER",
       "PROGRESS",
-    ];
+    ],
+    /**
+     * Attribute used to check state of Marker
+     * @type  {string} active
+     */
+    ACTIVE = "marker-active",
+    IN_ACTIVE = "marker-inactive";
 
   /**
    * Fills undefined values in obj with default properties with the same name from source object.
@@ -297,6 +303,15 @@
         // if ownerDocument is null then el is the document itself.
         return el.ownerDocument || el;
       },
+
+      /**
+       * Validate has class or not
+       * @param {string} className
+       * @returns {boolean}
+       */
+      hasClass: function (className) {
+        return el.classList.contains(className);
+      },
     };
   };
 
@@ -392,6 +407,7 @@
       color: "#ffff7b",
       highlightedClass: "highlighted",
       contextClass: "marker-context",
+      stateClass: "marker-inactive",
       onRemoveHighlight: function () {
         return true;
       },
@@ -402,6 +418,7 @@
     });
 
     dom(this.el).addClass(this.options.contextClass);
+    dom(this.el).addClass(this.options.stateClass);
     bindEvents(this.el, this);
   }
 
@@ -415,8 +432,20 @@
     dom(this.el).removeClass(this.options.contextClass);
   };
 
+  TextMarker.prototype.toggle = function () {
+    if (dom(this.el).hasClass(IN_ACTIVE)) {
+      dom(this.el).removeClass(IN_ACTIVE);
+      dom(this.el).addClass(ACTIVE);
+    } else {
+      dom(this.el).removeClass(ACTIVE);
+      dom(this.el).removeClass(IN_ACTIVE);
+    }
+  };
+
   TextMarker.prototype.markerHandler = function () {
-    this.doHighlight();
+    if (dom(this.el).hasClass(ACTIVE)) {
+      this.doHighlight();
+    }
   };
 
   TextMarker.prototype.doHighlight = function (keepRange) {

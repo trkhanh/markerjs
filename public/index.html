@@ -17,7 +17,7 @@
     <script type="text/javascript" src="assets/rainbow-custom.min.js"></script>
 
     <script type="text/javascript" src="assets/ColorPicker.js"></script>
-    <script type="text/javascript" src="../dist/Marker.js"></script>
+    <script type="text/javascript" src="../src/Marker.js"></script>
   </head>
 
   <body>
@@ -33,23 +33,23 @@
             <div class="color-picker"></div>
           </li>
           <li>Remove all highlights: <button id="remove">Remove</button></li>
+          <li>Toggle Marker: <button id="toggle">Toggle</button></li>
         </ul>
       </div>
 
       <div class="code shadow">
         <pre><code data-language="javascript">
-var hltr = new TextMarker(sandbox);
+      var hltr = new TextMarker(sandbox);
 
-colors.onColorChange(function (color) {
-    hltr.setColor(color);
-});
+      colors.onColorChange(function (color) {
+          hltr.setColor(color);
+      });
 
-buttonRemove.onclick = function () {
-    hltr.removeHighlights();
-};
-</code></pre>
+      buttonRemove.onclick = function () {
+          hltr.removeHighlights();
+      };
+      </code></pre>
       </div>
-
       <div class="card shadow">
         <div id="stamp">SANDBOX</div>
         <div id="sandbox" class="content">
@@ -186,6 +186,12 @@ buttonRemove.onclick = function () {
         var sandbox = document.getElementById("sandbox");
         var colors = new ColorPicker(document.querySelector(".color-picker"));
         var hltr = new TextMarker(sandbox);
+
+        var toggle = document.getElementById("toggle");
+
+        toggle.addEventListener("click", () => {
+          hltr.toggle();
+        });
 
         colors.onColorChange(function (color) {
           hltr.setColor(color);
