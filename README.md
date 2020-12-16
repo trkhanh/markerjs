@@ -1,5 +1,3 @@
-##<center>This repository is no longer maintained!</center> 
-
 # TextMarker
 
 TextMarker allows you to highlight text on web pages. Just select it!
@@ -24,21 +22,32 @@ And use it!
 var hltr = new TextMarker(document.body);
 ```
 
-For more details see [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or 
+For more details see [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or
 [Wiki](https://github.com/trkhanh/textMarker/wiki) pages on GitHub.
 
 Also check Demos section below for examples of usage.
 
 ## Features
 
-* Highlighting of selected text.
-* Highlighting all occurrences of given text (find & highlight).
-* Removing highlights.
-* Selecting highlight color.
-* Serialization & deserialization.
-* Works well in iframes.
-* Keeps DOM clean.
-* No dependencies. No jQuery or other libraries needed.
+- Highlighting of selected text.
+- Highlighting all occurrences of given text (find & highlight).
+- Removing highlights.
+- Selecting highlight color.
+- Serialization & deserialization.
+- Works well in iframes.
+- Keeps DOM clean.
+- No dependencies. No jQuery or other libraries needed.
+
+## For feature delete marked text (🧪 Experiment )
+
+Create callback in windown scope. This call back will executed. And remove hightlight
+
+```
+   function callback_RemoveHighLight(el) {
+        var marker = new TextMarker(sandbox);
+        marker.removeHighlights(el);
+      }
+```
 
 ## Compatibility
 
@@ -46,12 +55,12 @@ Should work in all decent browsers and IE >= 9.
 
 ## Demos
 
-* [Simple demo](http://trkhanh.github.io/textMarker/demos/simple.html)
-* [Callbacks](http://trkhanh.github.io/textMarker/demos/callbacks.html)
-* [Serialization](http://trkhanh.github.io/textMarker/demos/serialization.html)
-* [Iframe](http://trkhanh.github.io/textMarker/demos/iframe.html)
+- [Simple demo](http://trkhanh.github.io/textMarker/demos/simple.html)
+- [Callbacks](http://trkhanh.github.io/textMarker/demos/callbacks.html)
+- [Serialization](http://trkhanh.github.io/textMarker/demos/serialization.html)
+- [Iframe](http://trkhanh.github.io/textMarker/demos/iframe.html)
 
 ## Documentation
-   
-You may check [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or 
+
+You may check [API reference](http://trkhanh.github.io/textMarker/doc/index.html) or
 [Wiki](https://github.com/trkhanh/textMarker/wiki) pages on GitHub.
