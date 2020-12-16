@@ -6,7 +6,8 @@
     "start": "node ./index.js",
     "test": "jasmine",
     "ts": "npx typescript src/Marker.js --declaration --allowJs --emitDeclarationOnly --outDir types",
-    "build": "parcel build ./src/Marker.js"
+    "build": "parcel build ./src/Marker.js",
+    "dev": "parcel build ./src/Marker.js && npm start"
   },
   "dependencies": {},
   "devDependencies": {
