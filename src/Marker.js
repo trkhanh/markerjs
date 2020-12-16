@@ -397,6 +397,7 @@
       goDeeper: goDeeper,
     };
   }
+
   function TextMarker(element, options) {
     if (!element) {
       throw "Missing anchor element";
@@ -463,6 +464,8 @@
       timestamp = +new Date();
       wrapper = TextMarker.createWrapper(this.options);
       wrapper.setAttribute(TIMESTAMP_ATTR, timestamp);
+      //Todo: @khanhtran this is not good solution that leak out the logic for handle logic out this lib
+      wrapper.setAttribute("onclick", "callback_RemoveHighLight(this)");
 
       createdHighlights = this.highlightRange(range, wrapper);
       normalizeHighlights = this.normalizeHighlights(createdHighlights);
